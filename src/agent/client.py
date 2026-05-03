@@ -23,7 +23,7 @@ from pydantic import SecretStr
 from src.agent.models import AnomalyReport
 from src.agent.prompts import AGENT_SYSTEM_PROMPT, AGENT_USER_PROMPT
 
-load_dotenv()
+# load_dotenv()
 
 MODEL = "gpt-4o-mini"
 
@@ -175,7 +175,7 @@ async def run(series_id: str) -> AnomalyReport:
             logger.info("Loaded MCP tools: {}", [t.name for t in tools])
 
             llm = ChatOpenAI(
-                api_key=SecretStr(os.environ["OPENAI_API_KEY"]),
+                api_key=SecretStr(os.getenv("OPENAI_API_KEY")),
                 model=MODEL,
                 temperature=0,
             )

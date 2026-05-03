@@ -1,12 +1,14 @@
 """Streamlit UI for TSAD Orchestra time series anomaly detection."""
+import streamlit as st
+import os
+
+for key in st.secrets:
+    os.environ[key] = str(st.secrets[key])
 
 import asyncio
-import os
 from typing import Any
-
 import pandas as pd
 import plotly.graph_objects as go
-import streamlit as st
 from dotenv import load_dotenv
 from loguru import logger
 
@@ -14,7 +16,7 @@ from src.agent.client import run
 from src.utils.db import list_tables, read_time_series, read_time_series_by_id
 
 # Load environment variables
-load_dotenv()
+# load_dotenv()
 
 # Configure Streamlit page
 st.set_page_config(
