@@ -24,4 +24,4 @@ logs/
 timescaledb_data/
 scripts/db_migration/univariate/*
 
-docs/algorithm.tex
+TSAD_Orchestra

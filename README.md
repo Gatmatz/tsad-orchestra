@@ -73,6 +73,13 @@ Run a quick detection task on a specific dataset directly from your terminal:
 uv run python run_detection.py --dataset "your_dataset_id"
 ```
 
+### Running the Benchmark Suite
+To reproduce the experiments, evaluate model performance, or measure execution time against standard baselines, use the included benchmarking suite:
+```bash
+uv run python benchmark.py --help
+```
+*For detailed instructions on running and reproducing benchmarks, please refer to the [Benchmark Reproduction Guide](reproduction.md).*
+
 ### Mock Example
 Test the system with a built-in mock series containing obvious anomaly spikes:
 ```bash
@@ -88,10 +95,15 @@ tsad-orchestra/
 ├── .env.sample               # Environment variables template
 ├── pyproject.toml            # Project configuration and dependencies
 ├── README.md                 # Project documentation
-├── UI_GUIDE.md               # Detailed guide for the Streamlit UI
+├── reproduction.md           # Benchmark reproduction guide
+├── docker-compose.yml        # Docker configuration for services
+├── secrets.toml              # Streamlit secrets configuration
 ├── run_detection.py          # CLI entry point for detection
 ├── run_ui.sh                 # Helper script to launch the UI
 ├── benchmark.py              # Benchmarking framework
+├── measure_tool_usage.py     # Script to measure tool usage
+├── scripts/                  # Setup and utility scripts
+├── docs/                     # Documentation and assets
 └── src/                      # Source code
     ├── agent/                # LLM Agent logic, prompts, and models
     ├── benchmark/            # Benchmarking logic and utilities
@@ -115,3 +127,7 @@ After installation, `ruff check` and `ruff format` run on staged files automatic
 ```bash
 pre-commit run --all-files
 ```
+
+---
+
+For more information check our [poster](docs/poster) or our [paper](docs/paper).
