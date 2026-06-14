@@ -130,4 +130,4 @@ pre-commit run --all-files
 
 ---
 
-For more information check our [poster](docs/poster) or our [paper](docs/paper).
+For more information check our [poster](docs/poster.png) or our [paper](docs/paper.png).
